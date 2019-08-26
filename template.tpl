@@ -1,4 +1,4 @@
-﻿___INFO___
+___INFO___
 
 {
   "displayName": "Persado Pageview Tracker",
@@ -178,20 +178,19 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const log = require('logToConsole');
 const callInWindow = require('callInWindow');
 const copyFromWindow = require('copyFromWindow');
-
+const encodeUriComponent = require('encodeUriComponent');
 var sp = copyFromWindow('persado_sp');
-
-log(2, sp);
-
 callInWindow('PRSD.track', sp, 'view', {
   	channel:'web', 
-  	campaign: data.campaign_id,
-  	variant:data.variant_id
+  	variant: encodeUriComponent(data.variant_id),
+    campaign: encodeUriComponent(data.campaign_id),
 });
 
 data.gtmOnSuccess();
 
+log(2, sp);
+
 
 ___NOTES___
 
-Created on 14/08/2019, 18:46:15
+Created on 26/08/2019, 14:33:16
