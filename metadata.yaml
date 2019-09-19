@@ -1,0 +1,5 @@
+homepage: "www.persado.com"
+documentation: "https://www.persado.com"
+versions:
+  - sha: 88d9733
+    changeNotes: Initial Version
