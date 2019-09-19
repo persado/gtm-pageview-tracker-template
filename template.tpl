@@ -2,7 +2,7 @@ ___INFO___
 
 {
   "displayName": "Persado Pageview Tracker",
-  "description": "Persado pageview tracker",
+  "description": "Place the Persado Pageview Tracker on a page to measure its views. Do not use this tracker if you are utilizing the Persado API and always load it after the Persado Generic Tracker.",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -30,7 +30,8 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "Campaign ID",
     "simpleValueType": true,
     "name": "campaign_id",
-    "type": "TEXT"
+    "type": "TEXT",
+    "help": "Persado provides you with the campaign id."
   },
   {
     "valueValidators": [
@@ -41,7 +42,8 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "Variant",
     "simpleValueType": true,
     "name": "variant",
-    "type": "TEXT"
+    "type": "TEXT",
+    "help": "Persado provides you with the variant codes. Define a variant variable on GTM’s data layer and then add it here to return the correct code."
   }
 ]
 
@@ -148,40 +150,18 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
-  },
-  {
-    "instance": {
-      "key": {
-        "publicId": "logging",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "environments",
-          "value": {
-            "type": 1,
-            "string": "all"
-          }
-        }
-      ]
-    },
-    "clientAnnotations": {
-      "isEditedByUser": true
-    },
-    "isRequired": true
   }
 ]
 
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-const log = require('logToConsole');
 const callInWindow = require('callInWindow');
 const copyFromWindow = require('copyFromWindow');
 const encodeUriComponent = require('encodeUriComponent');
 var sp = copyFromWindow('persado_sp');
 callInWindow('PRSD.track', sp, 'view', {
-  	channel:'web', 
+  	channel:'web',
   	variant: encodeUriComponent(data.variant_id),
     campaign: encodeUriComponent(data.campaign_id),
 });
@@ -193,4 +173,4 @@ log(2, sp);
 
 ___NOTES___
 
-Created on 26/08/2019, 14:33:16
+Created on 19/09/2019, 12:11:53
