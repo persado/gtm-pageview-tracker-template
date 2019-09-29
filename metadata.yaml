@@ -3,3 +3,5 @@ documentation: "https://www.persado.com"
 versions:
   - sha: 88d9733
     changeNotes: Initial Version
+  - sha: c2e4f60
+    changeNotes: Minor changes to template 
