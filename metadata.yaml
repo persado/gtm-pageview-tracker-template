@@ -7,5 +7,5 @@ versions:
     changeNotes: Removed spaces from TOS
   - sha: c2e4f60
     changeNotes: Minor changes to template
-  - sha: 88d9733
+  - sha: 6eee0bd
     changeNotes: Initial Version
