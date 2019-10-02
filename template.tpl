@@ -31,6 +31,7 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
+    "help": "Persado provides you with the campaign id.",
     "valueValidators": [
       {
         "type": "NON_EMPTY"
@@ -39,10 +40,10 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "Campaign ID",
     "simpleValueType": true,
     "name": "campaign_id",
-    "type": "TEXT",
-    "help": "Persado provides you with the campaign id."
+    "type": "TEXT"
   },
   {
+    "help": "Persado provides you with the variant codes. Define a variant variable on GTM’s data layer and then add it here to return the correct code.",
     "valueValidators": [
       {
         "type": "NON_EMPTY"
@@ -51,8 +52,7 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "Variant",
     "simpleValueType": true,
     "name": "variant",
-    "type": "TEXT",
-    "help": "Persado provides you with the variant codes. Define a variant variable on GTM’s data layer and then add it here to return the correct code."
+    "type": "TEXT"
   }
 ]
 
@@ -177,9 +177,7 @@ callInWindow('PRSD.track', sp, 'view', {
 
 data.gtmOnSuccess();
 
-log(2, sp);
-
 
 ___NOTES___
 
-Created on 19/09/2019, 12:11:53
+Created on 02/10/2019, 11:38:16
